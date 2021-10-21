@@ -1,0 +1,46 @@
+body {
+    background-color: #d2e0c8;
+}
+aside {
+    width : 200px;
+    background-color : #818a55;
+    float: left;
+}
+.nav-table a {
+    background-color: #FFE051;
+}
+h1 {
+    background-color: #9eb98e;
+}
+h3 {
+    background-color: #f8e3af;
+}
+fieldset {
+    border : 10px;
+}
+#task_iframe{
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+#task_iframe th {
+    border: 1px solid #444444;
+}
+#task_iframe td {
+    border: 1px solid #444444;
+    text-align: center;
+}
+#task_iframe iframe{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0%;
+}
+.my-profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 70%;
+    overflow: hidden;
+    object-fit: cover;
+}
