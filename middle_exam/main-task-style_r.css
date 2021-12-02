@@ -1,8 +1,9 @@
 body {
     background-color: #d2e0c8;
+    font-family: serif;
 }
 aside {
-    width : 200px;
+    width : 200;
     background-color : #818a55;
     float: left;
 }

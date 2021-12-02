@@ -1,0 +1,22 @@
+.wrapper svg line {
+    animation: stroke 1s linear infinite alternate;
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+}
+@keyframes stroke {
+    from{
+        stroke-dashoffset: 0;
+    }
+    to{
+        stroke-dashoffset: 100;
+    }
+}
+.wrapper svg circle{
+    animation: circle 1s linear infinite;
+}
+@keyframes circle {
+    to{
+        transform: rotate(1turn);
+    }
+
+}
