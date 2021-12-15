@@ -1,11 +1,12 @@
 @charset "utf-8";
 :root{
-    --color1: #867943;
-    --color2: #be9e2f;
+    --color1: #4a724a;
+    --color2: #728551;
     --color3: #DAF7A6;
     --color4: #FFC300;
     --color5: #FF5733;
     --color6: #C70039;
+    --color7: #ffdb8c;
 }
 
 *{
@@ -15,37 +16,39 @@
 }
 body{
     min-height: 100vh;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
 }
 svg {
-    animation: fill 0.5s linear forwards 3.4s;
+    animation: fill 0.6s linear forwards 2.4s;
 }
 @keyframes fill {
     from {
         fill: transparent;
     }
     to {
-        fill: var(--color2);
+        fill: var(--color7);
     }
 }
 svg path {
-    stroke: var(--color2);
-    stroke-width: 5;
+    stroke: #000000;
+    stroke-width: 1px;
     animation: stroke 1s linear forwards;
 }
 .wrapper {
-    width: 2134px;
-    height: 215px;
+    width: 342px;
+    height: 68px;
     position: relative;
-    display: flex;
+    display: block;
+    background-color: rgba(0,0,0,0);
+    border: unset;
     justify-content: center;
     align-items: center;
 }
 .wrapper path{
     animation: animation 1s linear forwards;
-    end 0.5s linear;
+    end :  0.5s linear;
 }
 @keyframes animation {
     to{
@@ -58,8 +61,8 @@ svg path {
     }
 }
 .wrapper path:nth-child(1){
-    stroke-dasharray: 728px;
-    stroke-dashoffset: 728px;
+    stroke-dasharray: 700px;
+    stroke-dashoffset: 700px;
     animation-delay: 0.2s;
 }
 .wrapper path:nth-child(2){
@@ -116,4 +119,9 @@ svg path {
     stroke-dasharray: 882px;
     stroke-dashoffset: 882px;
     animation-delay: 2.4s;
+}
+.wrapper path:nth-child(13){
+    stroke-dasharray: 567px;
+    stroke-dashoffset: 567px;
+    animation-delay: 2.6s;
 }
