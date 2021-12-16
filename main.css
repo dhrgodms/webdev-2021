@@ -81,12 +81,20 @@ body {
     }
     .content-12 > iframe{
         width:100%;
+        height: 100%;
+    }
+    .wrapper {
+        flex-direction: column;
     }
 }
 @media screen and (min-width:640px){
     aside {
         width: 30%;
         float: right;
+    }
+    .wrapper {
+        width: 93%;
+        flex-direction: row;
     }
 }
 svg {
@@ -196,13 +204,10 @@ svg path {
 
 /*main.css*/
 .wrapper {
-    width: 100%;
-    height:auto;
     border:1px solid #000;
     background:#fff;
     position:relative;
     display:flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -224,25 +229,6 @@ aside> p, a{
     padding: 10px;
 }
 
-#task_iframe{
-    width: 100%;
-    border: 1px solid #444444;
-    border-collapse: collapse;
-    background-color: #ffffff;
-}
-#task_iframe th {
-    border: 1px solid #444444;
-}
-#task_iframe td {
-    border: 1px solid #444444;
-    text-align: center;
-}
-#task_iframe iframe{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 0%;
-}
 iframe {
     width: 100%;
     height: 100%;
@@ -251,15 +237,18 @@ iframe {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     position: relative;
 }
 .content-12 {
     display: flex;
-    flex-direction: row;
     max-height: 100vh;
 }
 .cube_box {
     width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     margin: 3px;
 }
 .heart_box {
@@ -316,12 +305,13 @@ nav{
     transition:all .7s;
     padding-bottom: 30px;
 }
-.header-home {
+.header {
     display:block;
     margin: 10px;
     text-align:center;
     height: 10px;
-    transition:all .7s
+    color: #d2e0c8;
+    transition:all .7s;
 }
 
 .title {
@@ -387,11 +377,11 @@ nav{
 /*cube*/
 .cube_body {
     margin-left: 30px;
+    margin-bottom: 30px;
     display: flex;
     box-sizing: border-box;
-    justify-content: center;
     align-items: center;
-    perspective: 100000000px;
+    perspective: 100000000000000px;
 }
 
 .cube_body .cube_wrapper {
@@ -436,14 +426,6 @@ nav{
     max-width: 400px;
     max-height: 200px;
 }
-/*.wrapper .top_6 {*/
-/*    transform: rotateX(90deg) translateZ(150px);*/
-/*    background-color: var(--color2);*/
-/*}*/
-/*.wrapper .bottom_5{*/
-/*    transform: rotateX(-90deg) translateZ(150px);*/
-/*    background-color: var(--color3);*/
-/*}*/
 
 .cube_wrapper .front_1{
     width: 400px;
