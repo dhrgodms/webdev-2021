@@ -19,8 +19,7 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     vertical-align: baseline;
-    font-family: 'Song Myung', serif;
-
+    font-family: 'Song Myung', serif, 'Nanum Myeongjo', serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -28,7 +27,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
-    line-height: 1;
+    /*line-height: 1;*/
 }
 ol, ul {
     list-style: none;
@@ -45,6 +44,7 @@ table {
     font-family: 'Song Myung', serif;
     src: url("./font/SongMyung-Regular.ttf") format('truetype');
 }
+
 :root {
     --color1: #4a724a;
     --color2: #0c3b15;
@@ -63,18 +63,32 @@ table {
 }
 
 body {
-    min-width: 430px;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    display : block;
+    display : flex;
+    flex-direction: column;
     background-color: #425b31;
     margin-right:auto;
     margin-left:auto;
     font-size:1em;
     padding: 10px;
 }
-/*svg*/
+@media screen and (max-width:640px){
+    body {
+        float: left;
+        width:100%
+    }
+    .content-12 > iframe{
+        width:100%;
+    }
+}
+@media screen and (min-width:640px){
+    aside {
+        width: 30%;
+        float: right;
+    }
+}
 svg {
     animation: fill 0.6s linear forwards 2.4s;
 }
@@ -102,8 +116,8 @@ svg path {
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .logo_ani path {
     animation: animation 1s linear forwards;
@@ -182,16 +196,15 @@ svg path {
 
 /*main.css*/
 .wrapper {
+    width: 100%;
     height:auto;
     border:1px solid #000;
     background:#fff;
     position:relative;
-    display:block;
+    display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5%;
-
-
 }
 .wrapper img {
     height:auto;
@@ -200,10 +213,7 @@ svg path {
     margin:0.4em auto 1.25em auto
 }
 aside {
-    width : 25%;
-    height : 70%;
     background-color : #788a55;
-    float: left;
     margin: 10px;
 }
 aside> p, a{
@@ -214,10 +224,6 @@ aside> p, a{
     padding: 10px;
 }
 
-fieldset {
-    margin: 10px;
-    border: unset;
-}
 #task_iframe{
     width: 100%;
     border: 1px solid #444444;
@@ -237,13 +243,40 @@ fieldset {
     height: 100%;
     padding-bottom: 0%;
 }
+iframe {
+    width: 100%;
+    height: 100%;
+}
+.content-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.content-12 {
+    display: flex;
+    flex-direction: row;
+    max-height: 100vh;
+}
+.cube_box {
+    width: 100%;
+    margin: 3px;
+}
+.heart_box {
+    width: 100%;
+    height: auto;
+    margin: 3px;
+}
+.svg_box {
+    height: 100px;
+    margin: 3px;
+}
 .my-profile {
     width: 100%;
     height: auto;
     overflow: hidden;
     object-fit: cover;
     display: block;
-
 }
 
 nav{
@@ -270,14 +303,15 @@ nav{
 }
 
 .home {
-    width:90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 90%;
     height:auto;
     min-height:10px;
-    border:1px solid #000;
     background:#fff;
     /*margin:0.95em 0 0.95em 0;*/
     position:relative;
-    display:block;
     margin: 5%;
     transition:all .7s;
     padding-bottom: 30px;
@@ -286,6 +320,7 @@ nav{
     display:block;
     margin: 10px;
     text-align:center;
+    height: 10px;
     transition:all .7s
 }
 
@@ -345,9 +380,109 @@ nav{
     color:#cb6077;
     opacity:.7
 }
-#content-wrap {
+
+
+
+
+/*cube*/
+.cube_body {
+    margin-left: 30px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    perspective: 100000000px;
+}
+
+.cube_body .cube_wrapper {
+    width: 400px;
+    height: 200px;
+    position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: 8s;
+    /*animation: ani 6s linear infinite;*/
+}
+@keyframes ani {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(1turn);
+    }
+}
+.cube_wrapper:hover{
+    transform : rotateY(-360deg);
+}
+.cube_wrapper > div{
+    width: 400px;
+    height: 200px;
     overflow: hidden;
+    background-color: var(--color1);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color : #ffffff;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 800;
+    letter-spacing: .2em;
 }
-section {
-    overflow: auto;
+.cube_wrapper > img {
+    max-width: 400px;
+    max-height: 200px;
 }
+/*.wrapper .top_6 {*/
+/*    transform: rotateX(90deg) translateZ(150px);*/
+/*    background-color: var(--color2);*/
+/*}*/
+/*.wrapper .bottom_5{*/
+/*    transform: rotateX(-90deg) translateZ(150px);*/
+/*    background-color: var(--color3);*/
+/*}*/
+
+.cube_wrapper .front_1{
+    width: 400px;
+    height: 200px;
+    background-image: url("img/cube_1.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(200px);
+    background-color: var(--color1);
+}
+.cube_wrapper .back_2{
+    width: 400px;
+    height: 200px;
+    background-image: url("img/cube_2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(0.5turn) translateZ(200px);
+    background-color: var(--color4);
+}
+.cube_wrapper .left_3{
+    width: 400px;
+    height: 200px;
+    background-image: url("img/cube_3.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(-90deg) translateZ(200px);
+    background-color: var(--color3);
+}
+.cube_wrapper .right_4{
+    width: 400px;
+    height: 200px;
+    background-image: url("img/cube_4.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(90deg) translateZ(200px);
+    background-color: var(--color2);
+}
+

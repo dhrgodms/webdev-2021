@@ -45,6 +45,7 @@ svg path {
     border: unset;
     justify-content: center;
     align-items: center;
+    margin-left: 30px;
 }
 .wrapper path{
     animation: animation 1s linear forwards;

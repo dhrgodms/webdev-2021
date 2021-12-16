@@ -1,11 +1,13 @@
 @charset "utf-8";
 :root {
     --color1: #4a724a44;
-    --color2: #72855144;
+    --color2: #0c3b1544;
     --color3: #DAF7A644;
     --color4: #FFC30044;
-    --color5: #FF573344;
+    --color5: #ff573344;
     --color6: #C7003944;
+    --color7: #f8e9c044;
+    --color8: rgba(17, 65, 194, 0.27);
 }
 
 * {
@@ -76,6 +78,7 @@ body {
 }
 .wrapper .back{
     transform: rotateY(0.5turn) translateZ(150px);
+    background-color: var(--color8);
 }
 .wrapper .front{
     transform: translateZ(150px);
